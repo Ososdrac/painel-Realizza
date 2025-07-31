@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Anúncios</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <h1>Painel Condomínio Realizza</h1>
 
+  <form id="adForm">
+    <input type="text" id="title" placeholder="Nome do Produto" required />
+    <input type="number" id="price" placeholder="Valor (R$)" required />
+    <input type="text" id="contact" placeholder="Contato (WhatsApp ou e-mail)" required />
+    <input type="file" id="image" accept="image/*" required />
+    <button type="submit">Publicar Anúncio</button>
+  </form>
+
+  <div id="anuncios" ></div>
+
+  <script src="script.js" type="module"></script>
+
+  <!-- Firebase SDK + Config -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "",
+      authDomain: "painel-realizza.firebaseapp.com",
+      projectId: "painel-realizza",
+      storageBucket: "painel-realizza.appspot.com",
+      messagingSenderId: "598967673282",
+      appId: "1:598967673282:web:2cf813881772105606365b",
+      measurementId: "G-RSMGC1G8WL"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.firebase = {
+      db,
+      addDoc,
+      collection,
+      getDocs
+    };
+  </script>
+</body>
 </html>
