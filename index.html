@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel de Anúncios</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <a href="https://painel-realizza.vercel.app" target="_blank" style="display:block; text-align:center; margin: 20px auto; font-size: 20px; color: #3366cc; text-decoration: none;">
-    📰 CLASSIFICADOS
-  </a>
-
-
   <h1>Painel Condomínio Realizza</h1>
 
   <form id="adForm">
@@ -28,8 +25,8 @@
 
   <!-- Firebase SDK + Config -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import {getFirestore, collection, addDoc, getDocs} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "",
@@ -52,4 +49,5 @@
     };
   </script>
 </body>
+
 </html>
