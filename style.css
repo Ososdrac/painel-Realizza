@@ -23,7 +23,7 @@ form {
 #adsContainer {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 0 20px;
 }
@@ -33,11 +33,16 @@ form {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ad-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
   border-radius: 8px;
+  object-fit: contain;
+  max-height: 250px;
+  background: #f0f0f0;
 }
